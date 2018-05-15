@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MinsPool.cs">
+    <Files>
+      <File FileName="Assets/Scripts/MinsPool.cs" Line="8" Column="38" />
+      <File FileName="Assets/Scripts/BlockMin.cs" Line="8" Column="2" />
+      <File FileName="Assets/Scripts/FloorMin.cs" Line="5" Column="28" />
+      <File FileName="Assets/Scripts/JumpMin.cs" Line="8" Column="2" />
+      <File FileName="Assets/Scripts/ProjectileMin.cs" Line="7" Column="5" />
+      <File FileName="Assets/Scripts/Min.cs" Line="8" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
