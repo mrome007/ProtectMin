@@ -10,4 +10,9 @@ public class BlockLight : MinLight
     {
         BlockMinReference = minReference as BlockMin;
     }
+
+    public override void ReturnToPool(MinLight minLight)
+    {
+        BlockMinReference.MinPool.ReturnMins(this);
+    }
 }

@@ -5,4 +5,6 @@ using UnityEngine;
 public abstract class MinLight : MonoBehaviour 
 {
     public abstract void Initialize(Min minReference);
+
+    public abstract void ReturnToPool(MinLight minLight);
 }

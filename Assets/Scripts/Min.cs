@@ -5,4 +5,5 @@ using UnityEngine;
 public abstract class Min : MonoBehaviour 
 {
     public MinsType MinType;
+    public MinsPool MinPool;
 }

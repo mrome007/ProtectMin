@@ -47,6 +47,38 @@ public class MinsPool : MonoBehaviour
             }
         }
     }
+
+    public MinLight GetMins(MinsType minType)
+    {
+        if(!MinsPoolContainer.ContainsKey(minType))
+        {
+            return null;
+        }
+
+        var minList = MinsPoolContainer[minType];
+        MinLight minGot = null;
+        foreach(var minLight in minList)
+        {
+            //TODO find a better way to keep them active/inactive. Active doing their job. Inactive is disabled or just following the player.
+            if(!minLight.gameObject.activeSelf)
+            {
+                minLight.gameObject.SetActive(true);
+                minGot = minLight;
+                minGot.transform.parent = null;
+                break;
+            }
+        }
+
+        return minGot;
+    }
+
+    public void ReturnMins(MinLight minLight)
+    {
+        minLight.gameObject.SetActive(false);
+        minLight.transform.parent = MinPoolRoot;
+        minLight.transform.localPosition = Vector3.zero;
+    }
+
 }
 
 public enum MinsType
