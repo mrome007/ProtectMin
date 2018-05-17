@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\MinLight.cs" />
      <Compile Include="Assets\Scripts\MinsPool.cs" />
      <Compile Include="Assets\Scripts\PlayerControlMin.cs" />
+     <Compile Include="Assets\Scripts\PlayerMinCollision.cs" />
      <Compile Include="Assets\Scripts\ProjectileLight.cs" />
      <Compile Include="Assets\Scripts\ProjectileMin.cs" />
  <Reference Include="UnityEngine.UI">

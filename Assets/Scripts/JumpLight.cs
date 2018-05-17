@@ -5,6 +5,13 @@ using UnityEngine;
 public class JumpLight : MinLight
 {
     public JumpMin JumpMinReference { get; set; }
+    public override Min BaseMin
+    {
+        get
+        {
+            return JumpMinReference;
+        }
+    }
 
     public override void Initialize(Min minReference)
     {

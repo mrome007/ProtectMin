@@ -54,4 +54,11 @@ public class PlayerControlMin : MonoBehaviour
             }
         }
     }
+
+    public void AddMinToControlledMins(MinLight min)
+    {
+        controlledMins[min.BaseMin.MinType.ToString()].Add(min);
+    }
+
+    //Add a way to remove Mins from the controlled mins. Cases where the min gets destroyed.
 }

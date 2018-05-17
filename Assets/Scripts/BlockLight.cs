@@ -5,6 +5,13 @@ using UnityEngine;
 public class BlockLight : MinLight
 {
     public BlockMin BlockMinReference { get; set; }
+    public override Min BaseMin
+    {
+        get
+        {
+            return BlockMinReference;
+        }
+    }
 
     public override void Initialize(Min minReference)
     {

@@ -5,6 +5,13 @@ using UnityEngine;
 public class ProjectileLight : MinLight
 {
     public ProjectileMin ProjectileMinReference { get; set; }
+    public override Min BaseMin
+    {
+        get
+        {
+            return ProjectileMinReference;
+        }
+    }
 
     public override void Initialize(Min minReference)
     {

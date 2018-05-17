@@ -5,6 +5,13 @@ using UnityEngine;
 public class FloorLight : MinLight
 {
     public FloorMin FloorMinReference { get; set; }
+    public override Min BaseMin
+    {
+        get
+        {
+            return FloorMinReference;
+        }
+    }
 
     public override void Initialize(Min minReference)
     {
