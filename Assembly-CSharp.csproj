@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BlockLight.cs" />
      <Compile Include="Assets\Scripts\BlockMin.cs" />
+     <Compile Include="Assets\Scripts\DummySpawner.cs" />
      <Compile Include="Assets\Scripts\FloorLight.cs" />
      <Compile Include="Assets\Scripts\FloorMin.cs" />
      <Compile Include="Assets\Scripts\JumpLight.cs" />

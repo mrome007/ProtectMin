@@ -19,6 +19,7 @@ public class PlayerControlMin : MonoBehaviour
         CurrentMinType = MinsType.Block;
         var minTypes = Enum.GetNames(typeof(MinsType));
         numTypes = minTypes.Length;
+        controlledMins = new Dictionary<string, List<MinLight>>();
 
         InitializeControlledMins(minTypes);
     }

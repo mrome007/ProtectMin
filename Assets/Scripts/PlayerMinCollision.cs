@@ -13,6 +13,7 @@ public class PlayerMinCollision : MonoBehaviour
         if(minLight != null)
         {
             playerControlMin.AddMinToControlledMins(minLight);
+            minLight.transform.parent = transform;
         }
     }
 }
