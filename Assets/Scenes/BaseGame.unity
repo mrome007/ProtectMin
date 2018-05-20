@@ -615,10 +615,11 @@ GameObject:
   - component: {fileID: 1190825700}
   - component: {fileID: 1190825703}
   - component: {fileID: 1190825704}
+  - component: {fileID: 1190825705}
   - component: {fileID: 1190825702}
   - component: {fileID: 1190825701}
   m_Layer: 0
-  m_Name: Player
+  m_Name: MinPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -751,6 +752,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1190825705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1190825698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9e02b17a419a47a2a21e05452b4458d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 5
+  xAxisBoundary: {x: -9, y: 9}
+  zAxisBoundary: {x: -0.65, y: 3.65}
 --- !u!1001 &1470827372
 Prefab:
   m_ObjectHideFlags: 0
