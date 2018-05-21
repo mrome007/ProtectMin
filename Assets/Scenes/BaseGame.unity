@@ -791,9 +791,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  distanceFromMin: 1.5
+  distanceFromMin: 3
   xAxisBoundary: {x: -9, y: 9}
-  zAxisBoundary: {x: -0.65, y: 3.65}
+  zAxisBoundary: {x: -0.5, y: 3.5}
 --- !u!114 &1214427820 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114317412289176728, guid: 4516dc97557024d9d84bb05fb3173fcc,

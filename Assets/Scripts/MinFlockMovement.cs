@@ -8,6 +8,7 @@ public class MinFlockMovement : MonoBehaviour
     private float minSpeed;
     private float currentDistance;
     private Vector3 directionVector;
+    private Vector3? randomPos;
     
     private void OnEnable()
     {
@@ -24,18 +25,29 @@ public class MinFlockMovement : MonoBehaviour
 
     private void MoveMin()
     {
-        minSpeed = minLight.BaseMin.MinPlayer.PlayerSpeed;
-
         directionVector = minLight.BaseMin.MinPlayer.transform.position - transform.position;
         currentDistance = directionVector.sqrMagnitude;
-        if(currentDistance > Mathf.Pow(minLight.BaseMin.MinPlayer.MinsDistance, 2f))
+        if(currentDistance >= Mathf.Pow(minLight.BaseMin.MinPlayer.MinsDistance, 2f))
         {
-            minSpeed++;
+            minSpeed += 3.0f;
             transform.Translate(directionVector.normalized * minSpeed * Time.deltaTime);
+            randomPos = null;
         }
         else
         {
+            minSpeed = minLight.BaseMin.MinPlayer.PlayerSpeed;
+            if(!randomPos.HasValue)
+            {
+                randomPos = new Vector3(minLight.BaseMin.MinPlayer.transform.position.x + Random.Range(-2f, 2f), 0f, minLight.BaseMin.MinPlayer.transform.position.z + Random.Range(-1f, 1f));
+            }
 
+            directionVector = randomPos.Value - transform.position;
+            transform.Translate(directionVector.normalized * minSpeed * Time.deltaTime);
+            currentDistance = directionVector.sqrMagnitude;
+            if(currentDistance < 1)
+            {
+                randomPos = null;
+            }
         }
     }
 }
