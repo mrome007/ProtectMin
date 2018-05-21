@@ -10,6 +10,11 @@ public class DummySpawner : MonoBehaviour
 
     private void Start()
     {
+        Invoke("GetTheMins", 0.02f);
+    }
+
+    private void GetTheMins()
+    {
         for(int index = 0; index < 5; index++)
         {
             var min = MinsPool.GetMins(MinsType.Block);

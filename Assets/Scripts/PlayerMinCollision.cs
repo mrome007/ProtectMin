@@ -14,6 +14,10 @@ public class PlayerMinCollision : MonoBehaviour
         {
             playerControlMin.AddMinToControlledMins(minLight);
             minLight.transform.parent = null;
+
+            other.enabled = false;
+            var flockMovement = other.GetComponent<MinFlockMovement>();
+            flockMovement.enabled = true;
         }
     }
 }

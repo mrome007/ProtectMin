@@ -83,6 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MinType: 0
   MinPool: {fileID: 0}
+  MinPlayer: {fileID: 0}
 --- !u!212 &212024064033551022
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class PlayerMinMovement : MonoBehaviour 
 {
+    public float PlayerSpeed { get { return movementSpeed; } }
+
+    public float MinsDistance { get { return distanceFromMin; } }
+
     [SerializeField]
     private float movementSpeed;
+
+    [SerializeField]
+    private float distanceFromMin;
 
     [SerializeField]
     private Vector2 xAxisBoundary;

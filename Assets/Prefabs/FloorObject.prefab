@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 114739163900030770}
   - component: {fileID: 61994699875939412}
   - component: {fileID: 50320980412534556}
+  - component: {fileID: 114914712996124304}
   m_Layer: 0
   m_Name: FloorObject
   m_TagString: Untagged
@@ -126,6 +127,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c9325318978649539cc13de422a64e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114914712996124304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1838469576259196}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9150b15f2b5d14a88a7cb6652392b17a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212971693686306656

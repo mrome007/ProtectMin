@@ -21,6 +21,10 @@ public class MinsPool : MonoBehaviour
     private void Awake()
     {
         MinsPoolContainer = new Dictionary<MinsType, List<MinLight>>();
+    }
+
+    private void Start()
+    {
         PopulatePool();
     }
 

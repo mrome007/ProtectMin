@@ -6,4 +6,5 @@ public abstract class Min : MonoBehaviour
 {
     public MinsType MinType;
     public MinsPool MinPool;
+    public PlayerMinMovement MinPlayer;
 }

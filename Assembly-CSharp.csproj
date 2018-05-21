@@ -51,7 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\PlayerMinMovement.cs" />
      <Compile Include="Assets\Scripts\BlockLight.cs" />
      <Compile Include="Assets\Scripts\BlockMin.cs" />
      <Compile Include="Assets\Scripts\DummySpawner.cs" />
@@ -60,10 +59,12 @@
      <Compile Include="Assets\Scripts\JumpLight.cs" />
      <Compile Include="Assets\Scripts\JumpMin.cs" />
      <Compile Include="Assets\Scripts\Min.cs" />
+     <Compile Include="Assets\Scripts\MinFlockMovement.cs" />
      <Compile Include="Assets\Scripts\MinLight.cs" />
      <Compile Include="Assets\Scripts\MinsPool.cs" />
      <Compile Include="Assets\Scripts\PlayerControlMin.cs" />
      <Compile Include="Assets\Scripts\PlayerMinCollision.cs" />
+     <Compile Include="Assets\Scripts\PlayerMinMovement.cs" />
      <Compile Include="Assets\Scripts\ProjectileLight.cs" />
      <Compile Include="Assets\Scripts\ProjectileMin.cs" />
      <Compile Include="Assets\Scripts\ScrollingBackground.cs" />
