@@ -15,7 +15,7 @@ public class DummySpawner : MonoBehaviour
 
     private void GetTheMins()
     {
-        for(int index = 0; index < 5; index++)
+        for(int index = 0; index < 10; index++)
         {
             var min = MinsPool.GetMins(MinsType.Block);
             var position = transform.position;

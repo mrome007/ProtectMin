@@ -38,7 +38,9 @@ public class MinFlockMovement : MonoBehaviour
             minSpeed = minLight.BaseMin.MinPlayer.PlayerSpeed;
             if(!randomPos.HasValue)
             {
-                randomPos = new Vector3(minLight.BaseMin.MinPlayer.transform.position.x + Random.Range(-3f, 3f), 0f, minLight.BaseMin.MinPlayer.transform.position.z + Random.Range(-1f, 1f));
+                randomPos = new Vector3(minLight.BaseMin.MinPlayer.transform.position.x + Random.Range(-3f, 3f), 
+                                        0f, 
+                                        minLight.BaseMin.MinPlayer.transform.position.z + Random.Range(-1f, 1f));
             }
 
             directionVector = randomPos.Value - transform.position;
