@@ -14,7 +14,7 @@ public class PlayerControlMin : MonoBehaviour
 
     private int numTypes;
     private Dictionary<MinsType, Stack<MinLight>> controlledMins;
-    private float timeToDeploy = 0.0315f;
+    private float timeToDeploy = 0.03f;
     private float deployTimer;
 
     private void Awake()
@@ -104,6 +104,7 @@ public class PlayerControlMin : MonoBehaviour
                     var minLight = controlledMins[MinsType.Block].Pop();
                     minLight.GetComponent<MinFlockMovement>().enabled = false;
                     minLight.transform.position = worldPos;
+                    minLight.GetComponent<DeployedMovement>().enabled = true;
                 }
 
                 deployTimer = timeToDeploy;

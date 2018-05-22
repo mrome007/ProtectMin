@@ -18,7 +18,7 @@ public class ProjectileLight : MinLight
         ProjectileMinReference = minReference as ProjectileMin;
     }
 
-    public override void ReturnToPool(MinLight minLight)
+    public override void ReturnToPool()
     {
         ProjectileMinReference.MinPool.ReturnMins(this);
     }
