@@ -17,9 +17,4 @@ public class FloorLight : MinLight
     {
         FloorMinReference = minReference as FloorMin;
     }
-
-    public override void ReturnToPool()
-    {
-        FloorMinReference.MinPool.ReturnMins(this);
-    }
 }

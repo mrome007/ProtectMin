@@ -676,8 +676,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e41c56cf22504ce4be4832761d88924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinsPool: {fileID: 1777263642}
-  CurrentMinType: 0
+  minsPool: {fileID: 1777263642}
+  blockDeployOffset: 0.25
 --- !u!50 &1190825701
 Rigidbody2D:
   serializedVersion: 4
@@ -909,7 +909,7 @@ MonoBehaviour:
   - {fileID: 114739163900030770, guid: 4d1db5e28ce1f4c0ca16159e3a0e0d24, type: 2}
   - {fileID: 114636346741862808, guid: e64e42dd59b3042ce9a1bed78c57895c, type: 2}
   - {fileID: 114454460509625492, guid: e5fb224f87d0a4208804aa90b7afec4d, type: 2}
-  NumberOfObjectsPerPool: 10
+  NumberOfObjectsPerPool: 50
   MinPoolRoot: {fileID: 1995851534}
 --- !u!1 &1968346702
 GameObject:

@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1b883078e9a4de5ac036c47164fa8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minLightSpriteRenderer: {fileID: 212779999657768166}
 --- !u!114 &114883319268368458
 MonoBehaviour:
   m_ObjectHideFlags: 1

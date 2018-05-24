@@ -17,9 +17,4 @@ public class JumpLight : MinLight
     {
         JumpMinReference = minReference as JumpMin;
     }
-
-    public override void ReturnToPool()
-    {
-        JumpMinReference.MinPool.ReturnMins(this);
-    }
 }

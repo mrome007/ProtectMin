@@ -7,23 +7,23 @@ using UnityEngine;
 public class PlayerControlMin : MonoBehaviour 
 {
     [SerializeField]
-    private MinsPool MinsPool;
+    private MinsPool minsPool;
 
     [SerializeField]
-    private MinsType CurrentMinType;
+    private float blockDeployOffset;
 
+    private MinsType currentMinType;
     private int numTypes;
     private Dictionary<MinsType, Stack<MinLight>> controlledMins;
-    private float timeToDeploy = 0.03f;
-    private float deployTimer;
+    private int deploySpriteOrder = 0;
+    private Vector3? previousPos;
 
     private void Awake()
     {
-        CurrentMinType = MinsType.Block;
+        currentMinType = MinsType.Block;
         var minTypes = Enum.GetValues(typeof(MinsType)).Cast<MinsType>().ToArray();
         numTypes = minTypes.Length;
         controlledMins = new Dictionary<MinsType, Stack<MinLight>>();
-        deployTimer = 0f;
 
         InitializeControlledMins(minTypes);
     }
@@ -36,10 +36,10 @@ public class PlayerControlMin : MonoBehaviour
 
     private void CycleCurrentMinType()
     {
-        var currentMinInt = (int)CurrentMinType;
+        var currentMinInt = (int)currentMinType;
         currentMinInt++;
         currentMinInt %= numTypes;
-        CurrentMinType = (MinsType)currentMinInt;
+        currentMinType = (MinsType)currentMinInt;
     }
 
     private void CycleCurrentMinTypeInput()
@@ -68,7 +68,7 @@ public class PlayerControlMin : MonoBehaviour
 
     private void MinTypeActions()
     {
-        switch(CurrentMinType)
+        switch(currentMinType)
         {
             case MinsType.Block:
                 DeployMinsTypeBlock();
@@ -92,28 +92,29 @@ public class PlayerControlMin : MonoBehaviour
     {
         if(Input.GetMouseButton(0))
         {
-            deployTimer -= Time.deltaTime;
+            var worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z - Camera.main.transform.position.z));
 
-            if(deployTimer <= 0)
+            var deploy = !previousPos.HasValue;
+            if(previousPos.HasValue)
             {
-                var worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, 
-                                                                          Input.mousePosition.y, 
-                                                                          transform.position.z - Camera.main.transform.position.z));
-                if(controlledMins[MinsType.Block].Count > 0)
-                {
-                    var minLight = controlledMins[MinsType.Block].Pop();
-                    minLight.GetComponent<MinFlockMovement>().enabled = false;
-                    minLight.transform.position = worldPos;
-                    minLight.GetComponent<DeployedMovement>().enabled = true;
-                }
-
-                deployTimer = timeToDeploy;
+                deploy = (Mathf.Abs((worldPos.x - previousPos.Value.x)) >= blockDeployOffset) || (Mathf.Abs((worldPos.y - previousPos.Value.y)) >= blockDeployOffset);
             }
+                
+            if(deploy && controlledMins[MinsType.Block].Count > 0)
+            {
+                var minLight = controlledMins[MinsType.Block].Pop();
+                minLight.GetComponent<MinFlockMovement>().enabled = false;
+                minLight.transform.position = worldPos;
+                minLight.GetComponent<DeployedMovement>().enabled = true;
+                minLight.UpdateMinLightSpriteOrder(deploySpriteOrder++);
+            }
+
+            previousPos = worldPos;
         }
 
         if(Input.GetMouseButtonUp(0))
         {
-
+            deploySpriteOrder = 0;
         }
     }
 

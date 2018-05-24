@@ -6,5 +6,18 @@ public abstract class MinLight : MonoBehaviour
 {
     public abstract Min BaseMin { get; }
     public abstract void Initialize(Min minReference);
-    public abstract void ReturnToPool();
+
+    [SerializeField]
+    private SpriteRenderer minLightSpriteRenderer;
+
+    public virtual void UpdateMinLightSpriteOrder(int order)
+    {
+        minLightSpriteRenderer.sortingOrder = order;
+    }
+
+    public virtual void ReturnToPool()
+    {
+        UpdateMinLightSpriteOrder(0);
+        BaseMin.MinPool.ReturnMins(this);
+    }
 }

@@ -29,7 +29,7 @@ public class MinFlockMovement : MonoBehaviour
         currentDistance = directionVector.sqrMagnitude;
         if(currentDistance >= Mathf.Pow(minLight.BaseMin.MinPlayer.MinsDistance, 2f))
         {
-            minSpeed += 3.0f;
+            minSpeed += Time.deltaTime;
             transform.Translate(directionVector.normalized * minSpeed * Time.deltaTime);
             randomPos = null;
         }
