@@ -1,18 +1,21 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MinFlockMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DeployedMovement.cs">
     <Files>
-      <File FileName="Assets/Scripts/MinFlockMovement.cs" Line="41" Column="187" />
-      <File FileName="Assets/Scripts/BlockLight.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DummySpawner.cs" Line="18" Column="38" />
+      <File FileName="Assets/Scripts/MinFlockMovement.cs" Line="43" Column="41" />
+      <File FileName="Assets/Scripts/BlockLight.cs" Line="21" Column="39" />
       <File FileName="Assets/Scripts/PlayerMinMovement.cs" Line="45" Column="35" />
       <File FileName="Assets/Scripts/Min.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MinsPool.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/DummySpawner.cs" Line="18" Column="37" />
-      <File FileName="Assets/Scripts/MinLight.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/FloorLight.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/JumpLight.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ProjectileLight.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayerMinCollision.cs" Line="17" Column="13" />
+      <File FileName="Assets/Scripts/MinsPool.cs" Line="79" Column="67" />
+      <File FileName="Assets/Scripts/MinLight.cs" Line="9" Column="5" />
+      <File FileName="Assets/Scripts/FloorLight.cs" Line="23" Column="39" />
+      <File FileName="Assets/Scripts/JumpLight.cs" Line="21" Column="39" />
+      <File FileName="Assets/Scripts/ProjectileLight.cs" Line="21" Column="39" />
+      <File FileName="Assets/Scripts/PlayerMinCollision.cs" Line="18" Column="35" />
+      <File FileName="Assets/Scripts/PlayerControlMin.cs" Line="92" Column="6" />
+      <File FileName="Assets/Scripts/DeployedMovement.cs" Line="17" Column="38" />
+      <File FileName="Assets/Scripts/ScrollingBackground.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
