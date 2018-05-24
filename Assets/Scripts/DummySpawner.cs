@@ -19,7 +19,8 @@ public class DummySpawner : MonoBehaviour
         {
             var min = MinsPool.GetMins(MinsType.Block);
             var position = transform.position;
-            position.x = Random.Range(position.x - 0.5f, position.x + 0.5f);
+            position.x = Random.Range(position.x - 1f, position.x + 1f);
+            position.z = Random.Range(position.z - 0.5f, position.z + 0.5f);
             min.transform.position = position;
             min.transform.parent = transform;
         }
