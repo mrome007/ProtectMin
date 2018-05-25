@@ -75,8 +75,9 @@ public class MinsPool : MonoBehaviour
     public void ReturnMins(MinLight minLight)
     {
         //turn off movement.
-        minLight.GetComponent<MinFlockMovement>().enabled = false;
-        minLight.GetComponent<DeployedMovement>().enabled = false;
+        var movement = minLight.GetComponent<MinMovement>();
+        movement.SetMovementType(MinMovement.MinMovementType.None);
+        movement.enabled = false;
 
         minLight.gameObject.SetActive(false);
         minLight.transform.parent = MinPoolRoot;

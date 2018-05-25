@@ -103,9 +103,11 @@ public class PlayerControlMin : MonoBehaviour
             if(deploy && controlledMins[MinsType.Block].Count > 0)
             {
                 var minLight = controlledMins[MinsType.Block].Pop();
-                minLight.GetComponent<MinFlockMovement>().enabled = false;
+
+                var movement = minLight.GetComponent<MinMovement>();
+                movement.SetMovementType(MinMovement.MinMovementType.Deploy);
+
                 minLight.transform.position = worldPos;
-                minLight.GetComponent<DeployedMovement>().enabled = true;
                 minLight.UpdateMinLightSpriteOrder(deploySpriteOrder++);
             }
 

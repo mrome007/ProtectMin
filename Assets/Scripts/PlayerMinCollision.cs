@@ -16,8 +16,9 @@ public class PlayerMinCollision : MonoBehaviour
             minLight.transform.parent = null;
 
             other.enabled = false;
-            var flockMovement = other.GetComponent<MinFlockMovement>();
-            flockMovement.enabled = true;
+            var movement = other.GetComponent<MinMovement>();
+            movement.enabled = true;
+            movement.SetMovementType(MinMovement.MinMovementType.Flock);
         }
     }
 }
