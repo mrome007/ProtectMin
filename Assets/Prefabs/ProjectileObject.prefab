@@ -36,9 +36,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4873869634683296}
   - component: {fileID: 114454460509625492}
+  - component: {fileID: 114749781934441280}
   - component: {fileID: 61411192872121378}
   - component: {fileID: 50869988673029686}
-  - component: {fileID: 114749781934441280}
   m_Layer: 0
   m_Name: ProjectileObject
   m_TagString: Untagged
@@ -141,6 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2308f6b9a9cbc47fa94f9ff24c4b0bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  launchDuration: 1.5
+  flightDuration: 5
+  projectileSpeed: 10
 --- !u!212 &212779999657768166
 SpriteRenderer:
   m_ObjectHideFlags: 1

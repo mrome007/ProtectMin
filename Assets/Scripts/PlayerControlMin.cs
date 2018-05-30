@@ -12,6 +12,7 @@ public class PlayerControlMin : MonoBehaviour
     [SerializeField]
     private float blockDeployOffset;
 
+    [SerializeField]
     private MinsType currentMinType;
     private int numTypes;
     private Dictionary<MinsType, Stack<MinLight>> controlledMins;
@@ -22,7 +23,7 @@ public class PlayerControlMin : MonoBehaviour
     {
         currentMinType = MinsType.Block;
         var minTypes = Enum.GetValues(typeof(MinsType)).Cast<MinsType>().ToArray();
-        numTypes = minTypes.Length;
+        numTypes = minTypes.Length - 1;
         controlledMins = new Dictionary<MinsType, Stack<MinLight>>();
 
         InitializeControlledMins(minTypes);
@@ -81,6 +82,7 @@ public class PlayerControlMin : MonoBehaviour
                 break;
 
             case MinsType.Projectile:
+                DeployMinsTypeProjectile();
                 break;
 
             default:
@@ -117,6 +119,23 @@ public class PlayerControlMin : MonoBehaviour
         if(Input.GetMouseButtonUp(0))
         {
             deploySpriteOrder = 0;
+        }
+    }
+
+    private void DeployMinsTypeProjectile()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            var worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z - Camera.main.transform.position.z));
+            if(controlledMins[MinsType.Projectile].Count > 0)
+            {
+                var minLight = controlledMins[MinsType.Projectile].Pop();
+
+                var movement = minLight.GetComponent<MinMovement>();
+                movement.SetMovementType(MinMovement.MinMovementType.Deploy);
+
+                minLight.transform.position = worldPos;
+            }
         }
     }
 
