@@ -1,19 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DummySpawner.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerControlMin.cs">
     <Files>
-      <File FileName="Assets/Scripts/MinFlockMovement.cs" Line="24" Column="6" />
-      <File FileName="Assets/Scripts/PlayerControlMin.cs" Line="108" Column="40" />
-      <File FileName="Assets/Scripts/DeployedMovement.cs" Line="19" Column="29" />
-      <File FileName="Assets/Scripts/ScrollingBackground.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MinLight.cs" Line="19" Column="6" />
-      <File FileName="Assets/Scripts/DummySpawner.cs" Line="23" Column="74" />
-      <File FileName="Assets/Scripts/MinsPool.cs" Line="75" Column="5" />
-      <File FileName="Assets/Scripts/BlockLight.cs" Line="16" Column="29" />
-      <File FileName="Assets/Scripts/FloorLight.cs" Line="19" Column="6" />
-      <File FileName="Assets/Scripts/JumpLight.cs" Line="19" Column="6" />
-      <File FileName="Assets/Scripts/ProjectileLight.cs" Line="19" Column="6" />
-      <File FileName="Assets/Scripts/PlayerMinCollision.cs" Line="20" Column="42" />
+      <File FileName="Assets/Scripts/MinMovement.cs" Line="5" Column="19" />
+      <File FileName="Assets/Scripts/BlockMinMovement.cs" Line="5" Column="44" />
+      <File FileName="Assets/Scripts/ProjectileMinMovement.cs" Line="5" Column="49" />
+      <File FileName="Assets/Scripts/JumpMinMovement.cs" Line="5" Column="43" />
+      <File FileName="Assets/Scripts/FloorMinMovement.cs" Line="5" Column="44" />
+      <File FileName="Assets/Scripts/MinsPool.cs" Line="78" Column="9" />
+      <File FileName="Assets/Scripts/PlayerControlMin.cs" Line="114" Column="36" />
+      <File FileName="Assets/Scripts/PlayerMinCollision.cs" Line="20" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
