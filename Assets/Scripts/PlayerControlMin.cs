@@ -76,6 +76,7 @@ public class PlayerControlMin : MonoBehaviour
                 break;
 
             case MinsType.Floor:
+                DeployMinsTypeFloor();
                 break;
 
             case MinsType.Jump:
@@ -135,6 +136,25 @@ public class PlayerControlMin : MonoBehaviour
                 movement.SetMovementType(MinMovement.MinMovementType.Deploy);
 
                 minLight.transform.position = worldPos;
+            }
+        }
+    }
+
+    private void DeployMinsTypeFloor()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            var worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z - Camera.main.transform.position.z));
+            if(controlledMins[MinsType.Floor].Count > 0)
+            {
+                while(controlledMins[MinsType.Floor].Count > 0)
+                {
+                    var minLight = controlledMins[MinsType.Floor].Pop();
+
+                    var movement = minLight.GetComponent<MinMovement>();
+                    (movement as FloorMinMovement).SetFloorTarget(worldPos);
+                    movement.SetMovementType(MinMovement.MinMovementType.Deploy);
+                }
             }
         }
     }

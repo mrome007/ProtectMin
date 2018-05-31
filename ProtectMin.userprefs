@@ -1,15 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerControlMin.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MinMovement.cs">
     <Files>
-      <File FileName="Assets/Scripts/MinMovement.cs" Line="5" Column="19" />
-      <File FileName="Assets/Scripts/BlockMinMovement.cs" Line="5" Column="44" />
-      <File FileName="Assets/Scripts/ProjectileMinMovement.cs" Line="5" Column="49" />
-      <File FileName="Assets/Scripts/JumpMinMovement.cs" Line="5" Column="43" />
-      <File FileName="Assets/Scripts/FloorMinMovement.cs" Line="5" Column="44" />
-      <File FileName="Assets/Scripts/MinsPool.cs" Line="78" Column="9" />
-      <File FileName="Assets/Scripts/PlayerControlMin.cs" Line="114" Column="36" />
-      <File FileName="Assets/Scripts/PlayerMinCollision.cs" Line="20" Column="37" />
+      <File FileName="Assets/Scripts/ProjectileMinMovement.cs" Line="70" Column="55" />
+      <File FileName="Assets/Scripts/MinMovement.cs" Line="33" Column="6" />
+      <File FileName="Assets/Scripts/MinLight.cs" Line="7" Column="23" />
+      <File FileName="Assets/Scripts/DummySpawner.cs" Line="23" Column="47" />
+      <File FileName="Assets/Scripts/PlayerControlMin.cs" Line="14" Column="5" />
+      <File FileName="Assets/Scripts/ProjectileMin.cs" Line="10" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

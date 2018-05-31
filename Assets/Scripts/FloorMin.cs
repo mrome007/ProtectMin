@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class FloorMin : Min
 {
-	
+    public float BuildSpeed;
 }

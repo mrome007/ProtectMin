@@ -84,6 +84,7 @@ MonoBehaviour:
   MinType: 1
   MinPool: {fileID: 0}
   MinPlayer: {fileID: 0}
+  BuildSpeed: 10
 --- !u!212 &212218516561444614
 SpriteRenderer:
   m_ObjectHideFlags: 1

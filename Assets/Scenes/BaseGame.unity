@@ -243,26 +243,6 @@ Prefab:
       propertyPath: MinPlayer
       value: 
       objectReference: {fileID: 1190825705}
-    - target: {fileID: 114671795033762708, guid: d567c922a99054cb29bbbffc89ef2ac5,
-        type: 2}
-      propertyPath: LaunchDuration
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114671795033762708, guid: d567c922a99054cb29bbbffc89ef2ac5,
-        type: 2}
-      propertyPath: FlightDuration
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114671795033762708, guid: d567c922a99054cb29bbbffc89ef2ac5,
-        type: 2}
-      propertyPath: ProjectileSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114671795033762708, guid: d567c922a99054cb29bbbffc89ef2ac5,
-        type: 2}
-      propertyPath: ProjectileAcceleration
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d567c922a99054cb29bbbffc89ef2ac5, type: 2}
   m_IsPrefabParent: 0
@@ -698,6 +678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minsPool: {fileID: 1777263642}
   blockDeployOffset: 0.25
+  currentMinType: 0
 --- !u!50 &1190825701
 Rigidbody2D:
   serializedVersion: 4
@@ -959,7 +940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinsPool: {fileID: 1777263642}
-  minType: 3
+  minType: 1
 --- !u!4 &1968346704
 Transform:
   m_ObjectHideFlags: 0
