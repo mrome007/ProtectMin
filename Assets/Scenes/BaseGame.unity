@@ -939,7 +939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinsPool: {fileID: 1777263642}
-  minType: 1
+  minType: 3
 --- !u!4 &1968346704
 Transform:
   m_ObjectHideFlags: 0
