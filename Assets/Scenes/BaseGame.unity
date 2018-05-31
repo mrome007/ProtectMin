@@ -677,7 +677,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minsPool: {fileID: 1777263642}
-  blockDeployOffset: 0.25
   currentMinType: 0
 --- !u!50 &1190825701
 Rigidbody2D:

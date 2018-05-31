@@ -6,7 +6,12 @@ public class ProjectileDeployState : IDeployState
 {
     public IDeployState NextState { get; private set; }
 
-    public ProjectileDeployState(IDeployState next)
+    public ProjectileDeployState()
+    {
+        NextState = null;
+    }
+
+    public void SetNextState(IDeployState next)
     {
         NextState = next;
     }
@@ -16,6 +21,7 @@ public class ProjectileDeployState : IDeployState
         if(Input.GetMouseButtonDown(0))
         {
             var worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, currentPos.z - Camera.main.transform.position.z));
+
             if(mins[MinsType.Projectile].Count > 0)
             {
                 var minLight = mins[MinsType.Projectile].Pop();

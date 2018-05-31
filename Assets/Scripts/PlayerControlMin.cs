@@ -15,6 +15,17 @@ public class PlayerControlMin : MonoBehaviour
     private int numTypes;
     private Dictionary<MinsType, Stack<MinLight>> controlledMins;
 
+    #region Deploy State
+
+    private IDeployState currentDeployState;
+    private BlockDeployState blockDeployState;
+    private FloorDeployState floorDeployState;
+    private JumpDeployState jumpDeployState;
+    private ProjectileDeployState projectileDeployState;
+    private bool deployStateInitialized = false;
+
+    #endregion
+
     private void Awake()
     {
         currentMinType = MinsType.Block;
@@ -22,6 +33,7 @@ public class PlayerControlMin : MonoBehaviour
         numTypes = minTypes.Length - 1;
         controlledMins = new Dictionary<MinsType, Stack<MinLight>>();
 
+        InitializeDeployStates();
         InitializeControlledMins(minTypes);
     }
 
@@ -37,6 +49,7 @@ public class PlayerControlMin : MonoBehaviour
         currentMinInt++;
         currentMinInt %= numTypes;
         currentMinType = (MinsType)currentMinInt;
+        currentDeployState = currentDeployState.NextState;
     }
 
     private void CycleCurrentMinTypeInput()
@@ -58,6 +71,26 @@ public class PlayerControlMin : MonoBehaviour
         }
     }
 
+    private void InitializeDeployStates()
+    {
+        if(!deployStateInitialized)
+        {
+            blockDeployState = new BlockDeployState();
+            floorDeployState = new FloorDeployState();
+            jumpDeployState = new JumpDeployState();
+            projectileDeployState = new ProjectileDeployState();
+
+            blockDeployState.SetNextState(floorDeployState);
+            floorDeployState.SetNextState(jumpDeployState);
+            jumpDeployState.SetNextState(projectileDeployState);
+            projectileDeployState.SetNextState(blockDeployState);
+
+            currentDeployState = blockDeployState;
+
+            deployStateInitialized = true;
+        }
+    }
+
     public void AddMinToControlledMins(MinLight min)
     {
         controlledMins[min.BaseMin.MinType].Push(min);
@@ -65,8 +98,11 @@ public class PlayerControlMin : MonoBehaviour
 
     private void MinTypeActions()
     {
-
+        if(currentDeployState != null)
+        {
+            currentDeployState.HandleInput(transform.position, ref controlledMins);
+        }
     }
 
-    //Add a way to remove Mins from the controlled mins. Cases where the min gets destroyed.
+
 }

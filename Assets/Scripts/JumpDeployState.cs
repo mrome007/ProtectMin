@@ -6,7 +6,12 @@ public class JumpDeployState : IDeployState
 {
     public IDeployState NextState { get; private set; }
 
-    public JumpDeployState(IDeployState next)
+    public JumpDeployState()
+    {
+        NextState = null;
+    }
+
+    public void SetNextState(IDeployState next)
     {
         NextState = next;
     }

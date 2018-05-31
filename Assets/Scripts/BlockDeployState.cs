@@ -10,7 +10,12 @@ public class BlockDeployState : IDeployState
     private int deploySpriteOrder = 0;
     private Vector3? previousPos;
 
-    public BlockDeployState(IDeployState next)
+    public BlockDeployState()
+    {
+        NextState = null;
+    }
+
+    public void SetNextState(IDeployState next)
     {
         NextState = next;
     }
