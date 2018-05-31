@@ -10,14 +10,10 @@ public class PlayerControlMin : MonoBehaviour
     private MinsPool minsPool;
 
     [SerializeField]
-    private float blockDeployOffset;
-
-    [SerializeField]
     private MinsType currentMinType;
+
     private int numTypes;
     private Dictionary<MinsType, Stack<MinLight>> controlledMins;
-    private int deploySpriteOrder = 0;
-    private Vector3? previousPos;
 
     private void Awake()
     {
@@ -69,94 +65,7 @@ public class PlayerControlMin : MonoBehaviour
 
     private void MinTypeActions()
     {
-        switch(currentMinType)
-        {
-            case MinsType.Block:
-                DeployMinsTypeBlock();
-                break;
 
-            case MinsType.Floor:
-                DeployMinsTypeFloor();
-                break;
-
-            case MinsType.Jump:
-                break;
-
-            case MinsType.Projectile:
-                DeployMinsTypeProjectile();
-                break;
-
-            default:
-                break;
-        }
-    }
-
-    private void DeployMinsTypeBlock()
-    {
-        if(Input.GetMouseButton(0))
-        {
-            var worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z - Camera.main.transform.position.z));
-
-            var deploy = !previousPos.HasValue;
-            if(previousPos.HasValue)
-            {
-                deploy = (Mathf.Abs((worldPos.x - previousPos.Value.x)) >= blockDeployOffset) || (Mathf.Abs((worldPos.y - previousPos.Value.y)) >= blockDeployOffset);
-            }
-                
-            if(deploy && controlledMins[MinsType.Block].Count > 0)
-            {
-                var minLight = controlledMins[MinsType.Block].Pop();
-
-                var movement = minLight.GetComponent<MinMovement>();
-                movement.SetMovementType(MinMovement.MinMovementType.Deploy);
-
-                minLight.transform.position = worldPos;
-                minLight.UpdateMinLightSpriteOrder(deploySpriteOrder++);
-            }
-
-            previousPos = worldPos;
-        }
-
-        if(Input.GetMouseButtonUp(0))
-        {
-            deploySpriteOrder = 0;
-        }
-    }
-
-    private void DeployMinsTypeProjectile()
-    {
-        if(Input.GetMouseButtonDown(0))
-        {
-            var worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z - Camera.main.transform.position.z));
-            if(controlledMins[MinsType.Projectile].Count > 0)
-            {
-                var minLight = controlledMins[MinsType.Projectile].Pop();
-
-                var movement = minLight.GetComponent<MinMovement>();
-                movement.SetMovementType(MinMovement.MinMovementType.Deploy);
-
-                minLight.transform.position = worldPos;
-            }
-        }
-    }
-
-    private void DeployMinsTypeFloor()
-    {
-        if(Input.GetMouseButtonDown(0))
-        {
-            var worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z - Camera.main.transform.position.z));
-            if(controlledMins[MinsType.Floor].Count > 0)
-            {
-                while(controlledMins[MinsType.Floor].Count > 0)
-                {
-                    var minLight = controlledMins[MinsType.Floor].Pop();
-
-                    var movement = minLight.GetComponent<MinMovement>();
-                    (movement as FloorMinMovement).SetFloorTarget(worldPos);
-                    movement.SetMovementType(MinMovement.MinMovementType.Deploy);
-                }
-            }
-        }
     }
 
     //Add a way to remove Mins from the controlled mins. Cases where the min gets destroyed.
