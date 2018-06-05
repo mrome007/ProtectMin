@@ -25,11 +25,21 @@ public class FloorMinMovement : MinMovement
             {
                 transform.Translate(direction.normalized * speed * Time.deltaTime);
             }
+            else
+            {
+                targetPosition = null;
+            }
+        }
+        else
+        {
+            transform.Translate(Vector3.left * 5f * Time.deltaTime);
         }
     }
 
     public void SetFloorTarget(Vector3 target)
     {
         targetPosition = target;
+        var floorMin = minLight.BaseMin as FloorMin;
+        floorMin.BuildSpeed = (targetPosition.Value - transform.position).sqrMagnitude / 1f;
     }
 }

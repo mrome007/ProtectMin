@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4125430163766918}
   - component: {fileID: 212971693686306656}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FloorSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 61994699875939412}
   - component: {fileID: 50320980412534556}
   - component: {fileID: 114782173427726470}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FloorObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
