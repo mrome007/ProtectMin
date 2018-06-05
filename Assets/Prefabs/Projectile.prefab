@@ -84,7 +84,7 @@ MonoBehaviour:
   MinType: 3
   MinPool: {fileID: 0}
   MinPlayer: {fileID: 0}
-  LaunchDuration: 0.5
+  LaunchDuration: 0.25
   FlightDuration: 2
   ProjectileSpeed: 15
   ProjectileAcceleration: 5

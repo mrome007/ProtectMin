@@ -20,7 +20,7 @@ public class PlayerControlMin : MonoBehaviour
     private IDeployState currentDeployState;
     private BlockDeployState blockDeployState;
     private FloorDeployState floorDeployState;
-    private JumpDeployState jumpDeployState;
+    private FloatDeployState floatDeployState;
     private ProjectileDeployState projectileDeployState;
     private bool deployStateInitialized = false;
 
@@ -77,12 +77,12 @@ public class PlayerControlMin : MonoBehaviour
         {
             blockDeployState = new BlockDeployState();
             floorDeployState = new FloorDeployState();
-            jumpDeployState = new JumpDeployState();
+            floatDeployState = new FloatDeployState();
             projectileDeployState = new ProjectileDeployState();
 
             blockDeployState.SetNextState(floorDeployState);
-            floorDeployState.SetNextState(jumpDeployState);
-            jumpDeployState.SetNextState(projectileDeployState);
+            floorDeployState.SetNextState(floatDeployState);
+            floatDeployState.SetNextState(projectileDeployState);
             projectileDeployState.SetNextState(blockDeployState);
 
             currentDeployState = blockDeployState;

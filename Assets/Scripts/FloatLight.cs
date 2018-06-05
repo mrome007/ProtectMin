@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpLight : MinLight
+public class FloatLight : MinLight
 {
-    public JumpMin JumpMinReference { get; set; }
+    public FloatMin FloatMinReference { get; set; }
     public override Min BaseMin
     {
         get
         {
-            return JumpMinReference;
+            return FloatMinReference;
         }
     }
 
     public override void Initialize(Min minReference)
     {
-        JumpMinReference = minReference as JumpMin;
+        FloatMinReference = minReference as FloatMin;
     }
 }

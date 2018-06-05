@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpMinMovement : MinMovement
+public class FloatMin : Min
 {
 
 }

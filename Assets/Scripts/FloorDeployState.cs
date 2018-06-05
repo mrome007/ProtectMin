@@ -22,16 +22,17 @@ public class FloorDeployState : IDeployState
         {
             var worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, currentPos.z - Camera.main.transform.position.z));
 
-            if(mins[MinsType.Floor].Count > 0)
+            if(mins[MinsType.Floor].Count <= 0)
             {
-                while(mins[MinsType.Floor].Count > 0)
-                {
-                    var minLight = mins[MinsType.Floor].Pop();
+                return;
+            }
+            while(mins[MinsType.Floor].Count > 0)
+            {
+                var minLight = mins[MinsType.Floor].Pop();
 
-                    var movement = minLight.GetComponent<MinMovement>();
-                    (movement as FloorMinMovement).SetFloorTarget(worldPos);
-                    movement.SetMovementType(MinMovement.MinMovementType.Deploy);
-                }
+                var movement = minLight.GetComponent<MinMovement>();
+                (movement as FloorMinMovement).SetFloorTarget(worldPos);
+                movement.SetMovementType(MinMovement.MinMovementType.Deploy);
             }
         }
     }
