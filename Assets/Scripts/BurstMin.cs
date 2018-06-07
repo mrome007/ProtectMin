@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class BurstMin : Min
 {
-
+    public float BurstApproachSpeed;
+    public float BurstSpeed;
 }

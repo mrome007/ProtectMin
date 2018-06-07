@@ -84,6 +84,8 @@ MonoBehaviour:
   MinType: 2
   MinPool: {fileID: 0}
   MinPlayer: {fileID: 0}
+  BurstApproachSpeed: 15
+  BurstSpeed: 30
 --- !u!212 &212511779726094794
 SpriteRenderer:
   m_ObjectHideFlags: 1
