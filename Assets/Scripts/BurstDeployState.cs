@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FloatDeployState : IDeployState 
+public class BurstDeployState : IDeployState 
 {
     public IDeployState NextState { get; private set; }
 
-    public FloatDeployState()
+    public BurstDeployState()
     {
         NextState = null;
     }

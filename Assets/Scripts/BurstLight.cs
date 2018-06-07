@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FloatLight : MinLight
+public class BurstLight : MinLight
 {
-    public FloatMin FloatMinReference { get; set; }
+    public BurstMin BurstMinReference { get; set; }
     public override Min BaseMin
     {
         get
         {
-            return FloatMinReference;
+            return BurstMinReference;
         }
     }
 
     public override void Initialize(Min minReference)
     {
-        FloatMinReference = minReference as FloatMin;
+        BurstMinReference = minReference as BurstMin;
     }
 }

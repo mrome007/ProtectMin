@@ -91,6 +91,6 @@ public enum MinsType
     None = 4,
     Block = 0,
     Floor = 1,
-    Float = 2,
+    Burst = 2,
     Projectile = 3
 }

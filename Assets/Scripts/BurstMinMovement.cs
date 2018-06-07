@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FloatMinMovement : MinMovement
+public class BurstMinMovement : MinMovement
 {
 
 }
