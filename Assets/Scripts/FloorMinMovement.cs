@@ -33,6 +33,10 @@ public class FloorMinMovement : MinMovement
         else
         {
             transform.Translate(Vector3.left * 5f * Time.deltaTime);
+            if(transform.position.x < -10f)
+            {
+                minLight.ReturnToPool();
+            }
         }
     }
 

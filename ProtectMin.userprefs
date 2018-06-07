@@ -1,21 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FloorDeployState.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FloorMinMovement.cs">
     <Files>
-      <File FileName="Assets/Scripts/FloorDeployState.cs" Line="37" Column="10" />
-      <File FileName="Assets/Scripts/MinsPool.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ProjectileMinMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/FloatLight.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/FloorMinMovement.cs" Line="43" Column="1" />
+      <File FileName="Assets/Scripts/FloorDeployState.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BlockMinMovement.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/MinMovement.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/MinLight.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/DummySpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ProjectileMin.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/FloorMinMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/FloorMin.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayerControlMin.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/IDeployState.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/BlockDeployState.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ProjectileDeployState.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/JumpDeployState.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/FloorMin.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
