@@ -12,6 +12,12 @@ public class PlayerMinMovement : MonoBehaviour
     private float movementSpeed;
 
     [SerializeField]
+    private float dashSpeed;
+
+    [SerializeField]
+    private float dashDuration;
+
+    [SerializeField]
     private float distanceFromMin;
 
     [SerializeField]
@@ -21,6 +27,10 @@ public class PlayerMinMovement : MonoBehaviour
     private Vector2 zAxisBoundary;
 
     private Vector3 movementVector;
+
+    private bool isDashing;
+    private Coroutine playerDashRoutine = null;
+    private float dashMultiplier = 1f;
 
     private void Awake()
     {
@@ -37,6 +47,13 @@ public class PlayerMinMovement : MonoBehaviour
         movementVector.x = Input.GetAxis("Horizontal");
         movementVector.z = Input.GetAxis("Vertical");
 
+        movementVector.x *= dashMultiplier;
+        if(Input.GetKeyDown(KeyCode.Space) && !isDashing)
+        {
+            playerDashRoutine = StartCoroutine(PlayerDash());
+        }
+
+
         transform.Translate(movementVector * movementSpeed * Time.deltaTime);
 
         //Clamp position;
@@ -46,4 +63,16 @@ public class PlayerMinMovement : MonoBehaviour
 
         transform.position = movementVector;
     }
+
+    private IEnumerator PlayerDash()
+    {
+        isDashing = true;
+        dashMultiplier = dashSpeed;
+
+        yield return new WaitForSeconds(dashDuration);
+
+        dashMultiplier = 1f;
+        isDashing = false;
+    }
 }
+
