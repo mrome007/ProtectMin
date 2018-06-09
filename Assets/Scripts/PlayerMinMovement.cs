@@ -50,7 +50,7 @@ public class PlayerMinMovement : MonoBehaviour
         movementVector.x *= dashMultiplier;
         if(Input.GetKeyDown(KeyCode.Space) && !isDashing)
         {
-            playerDashRoutine = StartCoroutine(PlayerDash());
+            playerDashRoutine = StartCoroutine(PlayerDash(movementVector.x));
         }
 
 
@@ -64,15 +64,20 @@ public class PlayerMinMovement : MonoBehaviour
         transform.position = movementVector;
     }
 
-    private IEnumerator PlayerDash()
+    private IEnumerator PlayerDash(float movement)
     {
-        isDashing = true;
-        dashMultiplier = dashSpeed;
+        if(movement != 0f)
+        {
+            isDashing = true;
+            dashMultiplier = dashSpeed;
+            gameObject.layer = 13;
 
-        yield return new WaitForSeconds(dashDuration);
+            yield return new WaitForSeconds(dashDuration);
 
-        dashMultiplier = 1f;
-        isDashing = false;
+            gameObject.layer = 0;
+            dashMultiplier = 1f;
+            isDashing = false;
+        }
     }
 }
 

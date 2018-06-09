@@ -793,6 +793,9 @@ MonoBehaviour:
   movementSpeed: 4
   dashSpeed: 6.25
   dashDuration: 0.25
+  dashLayer:
+    serializedVersion: 2
+    m_Bits: 8192
   distanceFromMin: 3
   xAxisBoundary: {x: -9, y: 9}
   zAxisBoundary: {x: -0.5, y: 3.5}
