@@ -1,16 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ProjectileMinMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MinsPool.cs">
     <Files>
-      <File FileName="Assets/Scripts/BurstLight.cs" Line="5" Column="35" />
-      <File FileName="Assets/Scripts/BurstMin.cs" Line="8" Column="29" />
-      <File FileName="Assets/Scripts/BlockMinMovement.cs" Line="5" Column="38" />
-      <File FileName="Assets/Scripts/ProjectileMinMovement.cs" Line="28" Column="38" />
-      <File FileName="Assets/Scripts/ProjectileDeployState.cs" Line="29" Column="39" />
-      <File FileName="Assets/Scripts/BurstDeployState.cs" Line="30" Column="51" />
-      <File FileName="Assets/Scripts/BurstMinMovement.cs" Line="25" Column="53" />
-      <File FileName="Assets/Scripts/FloorMinMovement.cs" Line="22" Column="57" />
-      <File FileName="Assets/Scripts/MinMovement.cs" Line="5" Column="1" />
+      <File FileName="Assets/Scripts/Min.cs" Line="7" Column="15" />
+      <File FileName="Assets/Scripts/MinsPool.cs" Line="89" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
