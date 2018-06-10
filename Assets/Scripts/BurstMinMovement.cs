@@ -22,6 +22,7 @@ public class BurstMinMovement : MinMovement
         if(target.HasValue)
         {
             var direction = target.Value - transform.position;
+            minLight.ChangeMinLightSpriteDirection(direction.x < 0f);
             transform.Translate(direction.normalized * burstMin.BurstApproachSpeed * Time.deltaTime);
             if(direction.sqrMagnitude < 1f)
             {
@@ -32,6 +33,7 @@ public class BurstMinMovement : MinMovement
         }
         else
         {
+            minLight.ChangeMinLightSpriteDirection(randomDirection.x < 0f);
             transform.Translate(randomDirection.normalized * burstMin.BurstSpeed * Time.deltaTime);
             if((transform.position.x < -10f || transform.position.x > 10f) || (transform.position.y < -2f || transform.position.y > 11f))
             {

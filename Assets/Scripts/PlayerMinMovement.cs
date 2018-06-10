@@ -26,6 +26,9 @@ public class PlayerMinMovement : MonoBehaviour
     [SerializeField]
     private Vector2 zAxisBoundary;
 
+    [SerializeField]
+    private SpriteRenderer playerSpriteRenderer;
+
     private Vector3 movementVector;
 
     private bool isDashing;
@@ -53,7 +56,7 @@ public class PlayerMinMovement : MonoBehaviour
             playerDashRoutine = StartCoroutine(PlayerDash(movementVector.x));
         }
 
-
+        ChangePlayerDirection(movementVector.x < 0f);
         transform.Translate(movementVector * movementSpeed * Time.deltaTime);
 
         //Clamp position;
@@ -78,6 +81,11 @@ public class PlayerMinMovement : MonoBehaviour
             dashMultiplier = 1f;
             isDashing = false;
         }
+    }
+
+    private void ChangePlayerDirection(bool flip)
+    {
+        playerSpriteRenderer.flipX = flip;
     }
 }
 

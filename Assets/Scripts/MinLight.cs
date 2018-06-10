@@ -15,6 +15,11 @@ public abstract class MinLight : MonoBehaviour
         minLightSpriteRenderer.sortingOrder = order;
     }
 
+    public virtual void ChangeMinLightSpriteDirection(bool flip)
+    {
+        minLightSpriteRenderer.flipX = flip;
+    }
+
     public virtual void ReturnToPool()
     {
         UpdateMinLightSpriteOrder(0);

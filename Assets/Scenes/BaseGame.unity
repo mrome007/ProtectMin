@@ -793,12 +793,10 @@ MonoBehaviour:
   movementSpeed: 4
   dashSpeed: 6.25
   dashDuration: 0.25
-  dashLayer:
-    serializedVersion: 2
-    m_Bits: 8192
   distanceFromMin: 3
   xAxisBoundary: {x: -9, y: 9}
   zAxisBoundary: {x: -0.5, y: 3.5}
+  playerSpriteRenderer: {fileID: 1190825704}
 --- !u!4 &1470827373 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4432448635078820, guid: 4eb8da50ac408446b97cc73326799d58,
@@ -944,7 +942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinsPool: {fileID: 1777263642}
-  minType: 2
+  minType: 3
 --- !u!4 &1968346704
 Transform:
   m_ObjectHideFlags: 0

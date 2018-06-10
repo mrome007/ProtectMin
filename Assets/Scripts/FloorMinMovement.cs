@@ -18,6 +18,7 @@ public class FloorMinMovement : MinMovement
         if(targetPosition.HasValue)
         {
             var direction = targetPosition.Value - transform.position;
+            minLight.ChangeMinLightSpriteDirection(direction.x < 0f);
             var distance = direction.sqrMagnitude;
             var floorMin = minLight.BaseMin as FloorMin;
             var speed = floorMin.BuildSpeed;

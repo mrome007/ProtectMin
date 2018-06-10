@@ -1,9 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MinsPool.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerMinMovement.cs">
     <Files>
-      <File FileName="Assets/Scripts/Min.cs" Line="7" Column="15" />
-      <File FileName="Assets/Scripts/MinsPool.cs" Line="89" Column="1" />
+      <File FileName="Assets/Scripts/PlayerMinMovement.cs" Line="80" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

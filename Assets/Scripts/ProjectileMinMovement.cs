@@ -45,6 +45,9 @@ public class ProjectileMinMovement : MinMovement
         var flightDuration = projectileMin.FlightDuration;
         var projectileSpeed = projectileMin.ProjectileSpeed;
         var projectileAcceleration = projectileMin.ProjectileAcceleration;
+        var directionNorm = (initialPos - minLight.BaseMin.MinPlayer.transform.position).normalized;
+
+        minLight.ChangeMinLightSpriteDirection(directionNorm.x < 0f);
 
         while(timer < launchDuration)
         {
@@ -59,7 +62,6 @@ public class ProjectileMinMovement : MinMovement
         }
 
         transform.position = initialPos;
-        var directionNorm = (initialPos - minLight.BaseMin.MinPlayer.transform.position).normalized;
         timer = 0f;
 
         while(timer < flightDuration)

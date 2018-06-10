@@ -14,6 +14,7 @@ public class MinMovement : MonoBehaviour
     public enum MinMovementType
     {
         None,
+        Spawn,
         Flock,
         Deploy
     }
@@ -30,6 +31,8 @@ public class MinMovement : MonoBehaviour
 
         randomPosContainer = null;
         randomPosition = Vector3.zero;
+        minLight.ChangeMinLightSpriteDirection(false);
+        minLight.UpdateMinLightSpriteOrder(0);
     }
 
     protected virtual void Update()
@@ -40,6 +43,7 @@ public class MinMovement : MonoBehaviour
     protected virtual void MoveMinInFlock()
     {
         directionVector = minLight.BaseMin.MinPlayer.transform.position - transform.position;
+        minLight.ChangeMinLightSpriteDirection(directionVector.x < 0f);
         currentDistance = directionVector.sqrMagnitude;
         if(currentDistance >= Mathf.Pow(minLight.BaseMin.MinPlayer.MinsDistance, 2f))
         {
@@ -70,6 +74,7 @@ public class MinMovement : MonoBehaviour
     protected virtual void MoveMinInDeploy()
     {
         transform.Translate(Vector3.left * 5f * Time.deltaTime);
+        minLight.ChangeMinLightSpriteDirection(true);
         if(transform.position.x < -10f)
         {
             minLight.ReturnToPool();
