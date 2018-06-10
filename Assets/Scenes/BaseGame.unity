@@ -912,7 +912,13 @@ MonoBehaviour:
   - {fileID: 114739163900030770, guid: 4d1db5e28ce1f4c0ca16159e3a0e0d24, type: 2}
   - {fileID: 114938227307733998, guid: 17edc202a9c054d05a74da073d119429, type: 2}
   - {fileID: 114454460509625492, guid: e5fb224f87d0a4208804aa90b7afec4d, type: 2}
-  NumberOfObjectsPerPool: 50
+  MinsSpawnObjects:
+  - {fileID: 114224681299491246, guid: 333d799e780f24b8b9429e4a8acda330, type: 2}
+  - {fileID: 114490126311881726, guid: a6bcf426ae28f41c1b5fed97fe338569, type: 2}
+  - {fileID: 114881901020974294, guid: 371825ecf37274cf680ce13bc945195b, type: 2}
+  - {fileID: 114434457157916414, guid: ce22ea78b5eed46c59b73a04a82dec9e, type: 2}
+  NumberOfMinObjectsPerPool: 50
+  NumberOfMinSpawnObjectsPerPool: 2
   MinPoolRoot: {fileID: 1995851534}
 --- !u!1 &1968346702
 GameObject:

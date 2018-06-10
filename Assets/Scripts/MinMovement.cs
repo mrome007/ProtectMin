@@ -29,6 +29,7 @@ public class MinMovement : MonoBehaviour
             minLight = GetComponent<MinLight>();
         }
 
+        movementType = MinMovementType.None;
         randomPosContainer = null;
         randomPosition = Vector3.zero;
         minLight.ChangeMinLightSpriteDirection(false);
@@ -38,6 +39,22 @@ public class MinMovement : MonoBehaviour
     protected virtual void Update()
     {
         MoveMin();
+    }
+
+    protected virtual void MoveMinInSpawn()
+    {
+        randomPosition.x = transform.position.x + Random.Range(-2f, 2f);
+        randomPosition.z = transform.position.z + Random.Range(-2f, 2f);
+        
+        var spawnSpeed = minLight.BaseMin.MinPlayer.PlayerSpeed / 3f;
+        directionVector = randomPosition - transform.position;
+        minLight.ChangeMinLightSpriteDirection(directionVector.x < 0f);
+        transform.Translate(directionVector.normalized * spawnSpeed * Time.deltaTime);
+        currentDistance = directionVector.sqrMagnitude;
+        if(currentDistance < 1)
+        {
+            randomPosContainer = null;
+        }
     }
 
     protected virtual void MoveMinInFlock()
@@ -85,6 +102,10 @@ public class MinMovement : MonoBehaviour
     {
         switch(movementType)
         {
+            case MinMovementType.Spawn:
+                MoveMinInSpawn();
+                break;
+
             case MinMovementType.Deploy:
                 MoveMinInDeploy();
                 break;

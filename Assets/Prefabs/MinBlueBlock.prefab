@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: 4915800672546258}
   - component: {fileID: 61376402372647526}
   - component: {fileID: 50991918843792468}
+  - component: {fileID: 114881901020974294}
   m_Layer: 12
   m_Name: MinBlueBlock
   m_TagString: Untagged
@@ -116,6 +117,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.35, y: 2.25}
   m_EdgeRadius: 0
+--- !u!114 &114881901020974294
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709637462239086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2077538c6903c49c395c6dafee4cc50e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinTypeToSpawn: 2
+  NumberOfMinsToSpawn: 0
 --- !u!212 &212096904834895926
 SpriteRenderer:
   m_ObjectHideFlags: 1

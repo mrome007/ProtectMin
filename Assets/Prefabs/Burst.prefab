@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4760174540628958}
   - component: {fileID: 212511779726094794}
   m_Layer: 0
-  m_Name: JumpSprite
+  m_Name: BurstSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
