@@ -21,6 +21,10 @@ public class DummySpawner : MonoBehaviour
         for(int index = 0; index < 10; index++)
         {
             var min = MinsPool.GetMins(minType);
+            if(min == null)
+            {
+                continue;
+            }
             var position = transform.position;
             position.x = Random.Range(position.x - 1f, position.x + 1f);
             position.z = Random.Range(position.z - 0.5f, position.z + 0.5f);
