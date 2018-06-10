@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\BurstLight.cs" />
      <Compile Include="Assets\Scripts\BurstMin.cs" />
      <Compile Include="Assets\Scripts\BurstMinMovement.cs" />
+     <Compile Include="Assets\Scripts\DummyBlockSpawner.cs" />
      <Compile Include="Assets\Scripts\DummySpawner.cs" />
      <Compile Include="Assets\Scripts\FloorDeployState.cs" />
      <Compile Include="Assets\Scripts\FloorLight.cs" />

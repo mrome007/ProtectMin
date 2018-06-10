@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4440091379183652}
   - component: {fileID: 212096904834895926}
   m_Layer: 12
-  m_Name: MinBlueBlock
+  m_Name: MinBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 61376402372647526}
   - component: {fileID: 50991918843792468}
   - component: {fileID: 114881901020974294}
+  - component: {fileID: 95416803615764706}
   m_Layer: 12
   m_Name: MinBlueBlock
   m_TagString: Untagged
@@ -117,6 +118,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.35, y: 2.25}
   m_EdgeRadius: 0
+--- !u!95 &95416803615764706
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709637462239086}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fb67ee5076f72404a9b5d77aa39fb822, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114881901020974294
 MonoBehaviour:
   m_ObjectHideFlags: 1
