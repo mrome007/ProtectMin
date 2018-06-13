@@ -125,13 +125,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1709637462239086}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2077538c6903c49c395c6dafee4cc50e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c63f452defa3474a83831564d62c67f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MinTypeToSpawn: 2
+  MinsInBlock: 0
   NumberOfMinsToSpawn: 0
-  MaxSpawns: 0
-  SpawnCount: 0
+  blockSprite: {fileID: 212096904834895926}
 --- !u!212 &212096904834895926
 SpriteRenderer:
   m_ObjectHideFlags: 1

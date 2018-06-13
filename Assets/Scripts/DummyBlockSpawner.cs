@@ -19,11 +19,11 @@ public class DummyBlockSpawner : MonoBehaviour
     private void GetTheBlock()
     {
         var minSpawn = MinsPool.GetSpawn(minType);
-        minSpawn.NumberOfMinsToSpawn = 6;
+        minSpawn.NumberOfMinsToSpawn = 8;
+        minSpawn.MinsInBlock = true;
         var position = transform.position;
         position.x = Random.Range(position.x + 5f, position.x + 10f);
         position.z = Random.Range(position.z - 0.5f, position.z + 0.5f);
         minSpawn.transform.position = position;
-        minSpawn.transform.parent = transform;
     }
 }

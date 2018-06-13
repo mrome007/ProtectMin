@@ -17,15 +17,15 @@ public class PlayerMinCollision : MonoBehaviour
 
             other.enabled = false;
             var movement = other.GetComponent<MinMovement>();
-            movement.enabled = true;
             movement.SetMovementType(MinMovement.MinMovementType.Flock);
         }
 
-        var minSpawn = other.GetComponent<MinSpawn>();
-        if(minSpawn != null)
+        var minSpawnLight = other.GetComponent<MinSpawnLight>();
+        if(minSpawnLight != null)
         {
-            minSpawn.SpawnMins(playerControlMin.Pool);
-            playerControlMin.Pool.ReturnSpawn(minSpawn);
+            other.enabled = false;
+            minSpawnLight.SpawnMins();
+            minSpawnLight.ShowMinSpawn(false);
         }
     }
 }

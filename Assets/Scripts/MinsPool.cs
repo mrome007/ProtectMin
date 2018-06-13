@@ -6,12 +6,15 @@ public class MinsPool : MonoBehaviour
 {
     [SerializeField]
     private List<Min> MinsMainObjects;
+
+    [SerializeField]
+    private MinSpawn MinSpawnMainObject;
     
     [SerializeField]
     private List<MinLight> MinsLightObjects;
 
     [SerializeField]
-    private List<MinSpawn> MinsSpawnObjects;
+    private List<MinSpawnLight> MinsSpawnObjects;
 
     [SerializeField]
     private int NumberOfMinObjectsPerPool = 10;
@@ -23,12 +26,12 @@ public class MinsPool : MonoBehaviour
     private Transform MinPoolRoot;
 
     private Dictionary<MinsType, List<MinLight>> MinsPoolContainer;
-    private Dictionary<MinsType, List<MinSpawn>> MinsSpawnConainer;
+    private Dictionary<MinsType, List<MinSpawnLight>> MinsSpawnConainer;
 
     private void Awake()
     {
         MinsPoolContainer = new Dictionary<MinsType, List<MinLight>>();
-        MinsSpawnConainer = new Dictionary<MinsType, List<MinSpawn>>();
+        MinsSpawnConainer = new Dictionary<MinsType, List<MinSpawnLight>>();
     }
 
     private void Start()
@@ -56,12 +59,13 @@ public class MinsPool : MonoBehaviour
 
             if(!MinsSpawnConainer.ContainsKey(min.MinType))
             {
-                MinsSpawnConainer.Add(min.MinType, new List<MinSpawn>());
+                MinsSpawnConainer.Add(min.MinType, new List<MinSpawnLight>());
                 for(int count = 0; count < NumberOfMinSpawnObjectsPerPool; count++)
                 {
-                    var minSpawn = (MinSpawn)Instantiate(MinsSpawnObjects[(int)min.MinType]);
+                    var minSpawn = (MinSpawnLight)Instantiate(MinsSpawnObjects[(int)min.MinType]);
                     minSpawn.transform.parent = MinPoolRoot;
                     minSpawn.transform.localPosition = Vector3.zero;
+                    minSpawn.Initialize(MinSpawnMainObject);
                     minSpawn.gameObject.SetActive(false);
                     MinsSpawnConainer[min.MinType].Add(minSpawn);
                 }
@@ -84,6 +88,7 @@ public class MinsPool : MonoBehaviour
             if(!minLight.gameObject.activeSelf)
             {
                 minLight.gameObject.SetActive(true);
+                minLight.GetComponent<Collider>().enabled = true;
                 minGot = minLight;
                 minGot.transform.parent = null;
                 break;
@@ -93,7 +98,7 @@ public class MinsPool : MonoBehaviour
         return minGot;
     }
 
-    public MinSpawn GetSpawn(MinsType minType)
+    public MinSpawnLight GetSpawn(MinsType minType)
     {
         if(!MinsSpawnConainer.ContainsKey(minType))
         {
@@ -101,13 +106,14 @@ public class MinsPool : MonoBehaviour
         }
 
         var minSpawnList = MinsSpawnConainer[minType];
-        MinSpawn spawnGot = null;
+        MinSpawnLight spawnGot = null;
 
         foreach(var minSpawn in minSpawnList)
         {
             if(!minSpawn.gameObject.activeSelf)
             {
                 minSpawn.gameObject.SetActive(true);
+                minSpawn.GetComponent<Collider>().enabled = true;
                 spawnGot = minSpawn;
                 spawnGot.transform.parent = null;
                 break;
@@ -119,17 +125,12 @@ public class MinsPool : MonoBehaviour
 
     public void ReturnMins(MinLight minLight)
     {
-        //turn off movement.
-        var movement = minLight.GetComponent<MinMovement>();
-        movement.SetMovementType(MinMovement.MinMovementType.None);
-        movement.enabled = false;
-
         minLight.gameObject.SetActive(false);
         minLight.transform.parent = MinPoolRoot;
         minLight.transform.localPosition = Vector3.zero;
     }
 
-    public void ReturnSpawn(MinSpawn minSpawn)
+    public void ReturnSpawn(MinSpawnLight minSpawn)
     {
         minSpawn.gameObject.SetActive(false);
         minSpawn.transform.parent = MinPoolRoot;

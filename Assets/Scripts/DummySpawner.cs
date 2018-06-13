@@ -31,12 +31,11 @@ public class DummySpawner : MonoBehaviour
             position.z = Random.Range(position.z - 0.5f, position.z + 0.5f);
             min.transform.position = position;
             min.transform.parent = transform;
-        }
         */
     }
 
     private void Update()
     {
-        transform.Translate(Vector3.left * 3f * Time.deltaTime);
+        //transform.Translate(Vector3.left * 3f * Time.deltaTime);
     }
 }

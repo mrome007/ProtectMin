@@ -70,6 +70,7 @@
      <Compile Include="Assets\Scripts\MinLight.cs" />
      <Compile Include="Assets\Scripts\MinMovement.cs" />
      <Compile Include="Assets\Scripts\MinSpawn.cs" />
+     <Compile Include="Assets\Scripts\MinSpawnLight.cs" />
      <Compile Include="Assets\Scripts\MinsPool.cs" />
      <Compile Include="Assets\Scripts\PlayerControlMin.cs" />
      <Compile Include="Assets\Scripts\PlayerMinCollision.cs" />
