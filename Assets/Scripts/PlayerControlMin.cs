@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class PlayerControlMin : MonoBehaviour 
 {
+    public MinsPool Pool { get{ return minsPool; } }
+    
     [SerializeField]
     private MinsPool minsPool;
 

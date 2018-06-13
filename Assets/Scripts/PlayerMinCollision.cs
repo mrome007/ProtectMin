@@ -20,5 +20,12 @@ public class PlayerMinCollision : MonoBehaviour
             movement.enabled = true;
             movement.SetMovementType(MinMovement.MinMovementType.Flock);
         }
+
+        var minSpawn = other.GetComponent<MinSpawn>();
+        if(minSpawn != null)
+        {
+            minSpawn.SpawnMins(playerControlMin.Pool);
+            playerControlMin.Pool.ReturnSpawn(minSpawn);
+        }
     }
 }

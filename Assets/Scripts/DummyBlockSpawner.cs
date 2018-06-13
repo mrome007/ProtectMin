@@ -13,12 +13,13 @@ public class DummyBlockSpawner : MonoBehaviour
 
     private void Start()
     {
-        Invoke("GetTheBlock", 0.05f);
+        Invoke("GetTheBlock", 2f);
     }
 
     private void GetTheBlock()
     {
         var minSpawn = MinsPool.GetSpawn(minType);
+        minSpawn.NumberOfMinsToSpawn = 6;
         var position = transform.position;
         position.x = Random.Range(position.x + 5f, position.x + 10f);
         position.z = Random.Range(position.z - 0.5f, position.z + 0.5f);

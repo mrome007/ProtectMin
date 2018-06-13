@@ -18,6 +18,7 @@ public class DummySpawner : MonoBehaviour
 
     private void GetTheMins()
     {
+        /*
         for(int index = 0; index < 10; index++)
         {
             var min = MinsPool.GetMins(minType);
@@ -31,10 +32,11 @@ public class DummySpawner : MonoBehaviour
             min.transform.position = position;
             min.transform.parent = transform;
         }
+        */
     }
 
     private void Update()
     {
-        transform.Translate(Vector3.left * 5f * Time.deltaTime);
+        transform.Translate(Vector3.left * 3f * Time.deltaTime);
     }
 }

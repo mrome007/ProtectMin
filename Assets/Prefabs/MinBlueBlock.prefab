@@ -98,8 +98,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.25, y: 2.25, z: 0.1}
-  m_Center: {x: 0, y: 1.15, z: 0.05}
+  m_Size: {x: 2.25, y: 2.25, z: 0.5}
+  m_Center: {x: 0, y: 1.15, z: 0.25}
 --- !u!95 &95416803615764706
 Animator:
   serializedVersion: 3
@@ -130,6 +130,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MinTypeToSpawn: 2
   NumberOfMinsToSpawn: 0
+  MaxSpawns: 0
+  SpawnCount: 0
 --- !u!212 &212096904834895926
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -163,7 +165,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: 7a7946cf746ce438ea9bc4d6ad74ad62, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
