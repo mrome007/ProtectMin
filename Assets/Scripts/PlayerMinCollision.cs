@@ -7,7 +7,7 @@ public class PlayerMinCollision : MonoBehaviour
     [SerializeField]
     private PlayerControlMin playerControlMin;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         var minLight = other.GetComponent<MinLight>();
         if(minLight != null)
