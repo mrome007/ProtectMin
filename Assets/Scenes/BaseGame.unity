@@ -905,7 +905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinsPool: {fileID: 1777263642}
-  minType: 2
+  minType: 3
 --- !u!114 &1979981228 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114828689427592000, guid: ed84c0c8f6d74487996e4409dcf1764e,

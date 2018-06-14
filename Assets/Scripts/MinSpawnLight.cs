@@ -39,6 +39,7 @@ public class MinSpawnLight : MonoBehaviour
 
     public void SpawnMins()
     {   
+        GetComponent<Collider>().enabled = false;
         for(int index = 0; index < NumberOfMinsToSpawn; index++)
         {
             var min = minSpawn.MinsPool.GetMins(MinTypeToSpawn);
