@@ -51,35 +51,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BlockDeployState.cs" />
-     <Compile Include="Assets\Scripts\BlockLight.cs" />
-     <Compile Include="Assets\Scripts\BlockMin.cs" />
-     <Compile Include="Assets\Scripts\BlockMinMovement.cs" />
-     <Compile Include="Assets\Scripts\BurstDeployState.cs" />
-     <Compile Include="Assets\Scripts\BurstLight.cs" />
-     <Compile Include="Assets\Scripts\BurstMin.cs" />
-     <Compile Include="Assets\Scripts\BurstMinMovement.cs" />
-     <Compile Include="Assets\Scripts\DummyBlockSpawner.cs" />
-     <Compile Include="Assets\Scripts\DummySpawner.cs" />
-     <Compile Include="Assets\Scripts\FloorDeployState.cs" />
-     <Compile Include="Assets\Scripts\FloorLight.cs" />
-     <Compile Include="Assets\Scripts\FloorMin.cs" />
-     <Compile Include="Assets\Scripts\FloorMinMovement.cs" />
-     <Compile Include="Assets\Scripts\IDeployState.cs" />
-     <Compile Include="Assets\Scripts\Min.cs" />
-     <Compile Include="Assets\Scripts\MinLight.cs" />
-     <Compile Include="Assets\Scripts\MinMovement.cs" />
-     <Compile Include="Assets\Scripts\MinSpawn.cs" />
-     <Compile Include="Assets\Scripts\MinSpawnLight.cs" />
-     <Compile Include="Assets\Scripts\MinsPool.cs" />
-     <Compile Include="Assets\Scripts\PlayerControlMin.cs" />
-     <Compile Include="Assets\Scripts\PlayerMinCollision.cs" />
-     <Compile Include="Assets\Scripts\PlayerMinMovement.cs" />
-     <Compile Include="Assets\Scripts\ProjectileDeployState.cs" />
-     <Compile Include="Assets\Scripts\ProjectileLight.cs" />
-     <Compile Include="Assets\Scripts\ProjectileMin.cs" />
-     <Compile Include="Assets\Scripts\ProjectileMinMovement.cs" />
-     <Compile Include="Assets\Scripts\ScrollingBackground.cs" />
+     <Compile Include="Assets\Scripts\Flyweights\BlockLight.cs" />
+     <Compile Include="Assets\Scripts\Flyweights\BlockMin.cs" />
+     <Compile Include="Assets\Scripts\Flyweights\BurstLight.cs" />
+     <Compile Include="Assets\Scripts\Flyweights\BurstMin.cs" />
+     <Compile Include="Assets\Scripts\Flyweights\FloorLight.cs" />
+     <Compile Include="Assets\Scripts\Flyweights\FloorMin.cs" />
+     <Compile Include="Assets\Scripts\Flyweights\Min.cs" />
+     <Compile Include="Assets\Scripts\Flyweights\MinLight.cs" />
+     <Compile Include="Assets\Scripts\Flyweights\MinSpawn.cs" />
+     <Compile Include="Assets\Scripts\Flyweights\MinSpawnLight.cs" />
+     <Compile Include="Assets\Scripts\Flyweights\ProjectileLight.cs" />
+     <Compile Include="Assets\Scripts\Flyweights\ProjectileMin.cs" />
+     <Compile Include="Assets\Scripts\Miscellaneous\DummyBlockSpawner.cs" />
+     <Compile Include="Assets\Scripts\Miscellaneous\DummySpawner.cs" />
+     <Compile Include="Assets\Scripts\Miscellaneous\ScrollingBackground.cs" />
+     <Compile Include="Assets\Scripts\Movement\BlockMinMovement.cs" />
+     <Compile Include="Assets\Scripts\Movement\BurstMinMovement.cs" />
+     <Compile Include="Assets\Scripts\Movement\FloorMinMovement.cs" />
+     <Compile Include="Assets\Scripts\Movement\MinMovement.cs" />
+     <Compile Include="Assets\Scripts\Movement\PlayerMinMovement.cs" />
+     <Compile Include="Assets\Scripts\Movement\ProjectileMinMovement.cs" />
+     <Compile Include="Assets\Scripts\ObjectPool\MinsPool.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerControlMin.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerMinCollision.cs" />
+     <Compile Include="Assets\Scripts\State\BlockDeployState.cs" />
+     <Compile Include="Assets\Scripts\State\BurstDeployState.cs" />
+     <Compile Include="Assets\Scripts\State\FloorDeployState.cs" />
+     <Compile Include="Assets\Scripts\State\IDeployState.cs" />
+     <Compile Include="Assets\Scripts\State\ProjectileDeployState.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
