@@ -582,7 +582,7 @@ MonoBehaviour:
   SecondBackground: {fileID: 587892197}
   outOfCameraLimit: -25
   resetTransform: {fileID: 546084803}
-  scrollSpeed: 5
+  scrollSpeed: 10
 --- !u!1001 &995773522
 Prefab:
   m_ObjectHideFlags: 0

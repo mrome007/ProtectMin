@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 4
   dashSpeed: 6.25
-  dashDuration: 0.25
+  dashDuration: 0.175
   distanceFromMin: 3
   xAxisBoundary: {x: -9, y: 9}
   zAxisBoundary: {x: -1.75, y: 2}
