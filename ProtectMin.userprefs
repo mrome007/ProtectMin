@@ -1,10 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MinsPool.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Movement/FloorMinMovement.cs">
     <Files>
-      <File FileName="Assets/Scripts/MinSpawnLight.cs" Line="42" Column="50" />
-      <File FileName="Assets/Scripts/MinsPool.cs" Line="107" Column="9" />
-      <File FileName="Assets/Scripts/DummyBlockSpawner.cs" Line="18" Column="1" />
+      <File FileName="Assets/Scripts/Movement/PlayerMinMovement.cs" Line="115" Column="41" />
+      <File FileName="Assets/Scripts/Player/PlayerControlMin.cs" Line="59" Column="42" />
+      <File FileName="Assets/Scripts/Movement/FloorMinMovement.cs" Line="36" Column="49" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

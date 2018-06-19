@@ -14,6 +14,9 @@ public class PlayerControlMin : MonoBehaviour
     [SerializeField]
     private MinsType currentMinType;
 
+    [SerializeField]
+    private PlayerMinAppearance playerAppearance;
+
     private int numTypes;
     private Dictionary<MinsType, Stack<MinLight>> controlledMins;
 
@@ -31,6 +34,7 @@ public class PlayerControlMin : MonoBehaviour
     private void Awake()
     {
         currentMinType = MinsType.Block;
+        playerAppearance.ChangeMinAppearance(currentMinType);
         var minTypes = Enum.GetValues(typeof(MinsType)).Cast<MinsType>().ToArray();
         numTypes = minTypes.Length - 1;
         controlledMins = new Dictionary<MinsType, Stack<MinLight>>();
@@ -51,6 +55,7 @@ public class PlayerControlMin : MonoBehaviour
         currentMinInt++;
         currentMinInt %= numTypes;
         currentMinType = (MinsType)currentMinInt;
+        playerAppearance.ChangeMinAppearance(currentMinType);
         currentDeployState = currentDeployState.NextState;
     }
 
@@ -105,6 +110,4 @@ public class PlayerControlMin : MonoBehaviour
             currentDeployState.HandleInput(transform.position, ref controlledMins);
         }
     }
-
-
 }

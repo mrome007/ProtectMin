@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\Movement\ProjectileMinMovement.cs" />
      <Compile Include="Assets\Scripts\ObjectPool\MinsPool.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerControlMin.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerMinAppearance.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMinCollision.cs" />
      <Compile Include="Assets\Scripts\State\BlockDeployState.cs" />
      <Compile Include="Assets\Scripts\State\BurstDeployState.cs" />
