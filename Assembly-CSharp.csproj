@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\OrangeEnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Flyweights\BlockLight.cs" />
      <Compile Include="Assets\Scripts\Flyweights\BlockMin.cs" />
      <Compile Include="Assets\Scripts\Flyweights\BurstLight.cs" />

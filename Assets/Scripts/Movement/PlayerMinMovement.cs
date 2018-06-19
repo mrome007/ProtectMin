@@ -32,7 +32,6 @@ public class PlayerMinMovement : MonoBehaviour
     private Vector3 movementVector;
 
     private bool isDashing;
-    private Coroutine playerDashRoutine = null;
     private float dashMultiplier = 1f;
 
     private bool tapStart = false;
@@ -134,7 +133,7 @@ public class PlayerMinMovement : MonoBehaviour
         {
             if(tapStart && !isDashing && key == 'd') 
             {
-                playerDashRoutine = StartCoroutine(PlayerDash(1f));
+                StartCoroutine(PlayerDash(1f));
                 tapStart = false;
                 tapTimer = 0f;
                 key = ' ';
@@ -149,7 +148,7 @@ public class PlayerMinMovement : MonoBehaviour
         {
             if(tapStart && !isDashing && key == 'a')
             {
-                playerDashRoutine = StartCoroutine(PlayerDash(-1f));
+                StartCoroutine(PlayerDash(-1f));
                 tapStart = false;
                 tapTimer = 0f;
                 key = ' ';

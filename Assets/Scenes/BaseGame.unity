@@ -723,6 +723,10 @@ Prefab:
       propertyPath: minsPool
       value: 
       objectReference: {fileID: 1777263642}
+    - target: {fileID: 1771379774693894, guid: e291a14a9522b4326bc64312b73fb03c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e291a14a9522b4326bc64312b73fb03c, type: 2}
   m_IsPrefabParent: 0
