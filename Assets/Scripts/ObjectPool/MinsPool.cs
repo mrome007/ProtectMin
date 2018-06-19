@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MinsPool : MonoBehaviour 
@@ -17,6 +19,9 @@ public class MinsPool : MonoBehaviour
     private List<MinSpawnLight> MinsSpawnObjects;
 
     [SerializeField]
+    private List<GameObject> EnemyMinsObjects;
+
+    [SerializeField]
     private int NumberOfMinObjectsPerPool = 10;
 
     [SerializeField]
@@ -27,11 +32,13 @@ public class MinsPool : MonoBehaviour
 
     private Dictionary<MinsType, List<MinLight>> MinsPoolContainer;
     private Dictionary<MinsType, List<MinSpawnLight>> MinsSpawnConainer;
+    private Dictionary<EnemyMinsType, List<GameObject>> MinsEnemyContainer;
 
     private void Awake()
     {
         MinsPoolContainer = new Dictionary<MinsType, List<MinLight>>();
         MinsSpawnConainer = new Dictionary<MinsType, List<MinSpawnLight>>();
+        MinsEnemyContainer = new Dictionary<EnemyMinsType, List<GameObject>>();
     }
 
     private void Start()
@@ -46,7 +53,7 @@ public class MinsPool : MonoBehaviour
             if(!MinsPoolContainer.ContainsKey(min.MinType))
             {
                 MinsPoolContainer.Add(min.MinType, new List<MinLight>());
-                for(int count = 0; count < NumberOfMinObjectsPerPool; count++)
+                for(var count = 0; count < NumberOfMinObjectsPerPool; count++)
                 {
                     var minLight = (MinLight)Instantiate(MinsLightObjects[(int)min.MinType]);
                     minLight.transform.parent = MinPoolRoot;
@@ -60,7 +67,7 @@ public class MinsPool : MonoBehaviour
             if(!MinsSpawnConainer.ContainsKey(min.MinType))
             {
                 MinsSpawnConainer.Add(min.MinType, new List<MinSpawnLight>());
-                for(int count = 0; count < NumberOfMinSpawnObjectsPerPool; count++)
+                for(var count = 0; count < NumberOfMinSpawnObjectsPerPool; count++)
                 {
                     var minSpawn = (MinSpawnLight)Instantiate(MinsSpawnObjects[(int)min.MinType]);
                     minSpawn.transform.parent = MinPoolRoot;
@@ -68,6 +75,29 @@ public class MinsPool : MonoBehaviour
                     minSpawn.Initialize(MinSpawnMainObject);
                     minSpawn.gameObject.SetActive(false);
                     MinsSpawnConainer[min.MinType].Add(minSpawn);
+                }
+            }
+        }
+
+        var enemyValue = Enum.GetValues(typeof(EnemyMinsType)).Cast<EnemyMinsType>();
+        foreach(var enemyType in enemyValue)
+        {
+            if(!MinsEnemyContainer.ContainsKey(enemyType))
+            {
+                MinsEnemyContainer.Add(enemyType, new List<GameObject>());
+                var count = 0;
+                if(enemyType == EnemyMinsType.Boss)
+                {
+                    count = NumberOfMinObjectsPerPool - 1; //Create only one boss.
+                }
+
+                for(; count < NumberOfMinSpawnObjectsPerPool; count++)
+                {
+                    var enemyMin = GameObject.Instantiate(EnemyMinsObjects[(int)enemyType]);
+                    enemyMin.transform.parent = MinPoolRoot;
+                    enemyMin.transform.localScale = Vector3.zero;
+                    enemyMin.SetActive(false);
+                    MinsEnemyContainer[enemyType].Add(enemyMin);
                 }
             }
         }
@@ -123,6 +153,30 @@ public class MinsPool : MonoBehaviour
         return spawnGot;
     }
 
+    public GameObject GetEnemy(EnemyMinsType enemyType)
+    {
+        if(!MinsEnemyContainer.ContainsKey(enemyType))
+        {
+            return null;
+        }
+
+        var enemyList = MinsEnemyContainer[enemyType];
+        GameObject enemyGot = null;
+
+        foreach(var enemy in enemyList)
+        {
+            if(!enemy.activeSelf)
+            {
+                enemyGot = enemy;
+                enemy.SetActive(true);
+                enemy.transform.parent = null;
+                break;
+            }
+        }
+
+        return enemyGot;
+    }
+
     public void ReturnMins(MinLight minLight)
     {
         minLight.gameObject.SetActive(false);
@@ -137,6 +191,13 @@ public class MinsPool : MonoBehaviour
         minSpawn.transform.localPosition = Vector3.zero;
     }
 
+    public void ReturnEnemy(GameObject enemy)
+    {
+        enemy.SetActive(false);
+        enemy.transform.parent = MinPoolRoot;
+        enemy.transform.localPosition = Vector3.zero;
+    }
+
 }
 
 public enum MinsType
@@ -146,4 +207,11 @@ public enum MinsType
     Floor = 1,
     Burst = 2,
     Projectile = 3
+}
+
+public enum EnemyMinsType
+{
+    Orange = 0,
+    Blue = 1,
+    Boss = 2
 }

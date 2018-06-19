@@ -572,22 +572,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a51279a7cf25443a5973e03a58cc9f17, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &693840507 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1769575230555342, guid: a51279a7cf25443a5973e03a58cc9f17,
-    type: 2}
-  m_PrefabInternal: {fileID: 693840506}
---- !u!114 &693840508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 693840507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1368502b5d0404afe82e2f7acf8c749b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &787493704 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4908109249233404, guid: d567c922a99054cb29bbbffc89ef2ac5,
@@ -909,6 +893,9 @@ MonoBehaviour:
   - {fileID: 114490126311881726, guid: a6bcf426ae28f41c1b5fed97fe338569, type: 2}
   - {fileID: 114881901020974294, guid: 371825ecf37274cf680ce13bc945195b, type: 2}
   - {fileID: 114434457157916414, guid: ce22ea78b5eed46c59b73a04a82dec9e, type: 2}
+  EnemyMinsObjects:
+  - {fileID: 1894259971350268, guid: d1a410bf3aa4c46d79af8e3116d65c54, type: 2}
+  - {fileID: 1769575230555342, guid: a51279a7cf25443a5973e03a58cc9f17, type: 2}
   NumberOfMinObjectsPerPool: 50
   NumberOfMinSpawnObjectsPerPool: 5
   MinPoolRoot: {fileID: 1995851534}
