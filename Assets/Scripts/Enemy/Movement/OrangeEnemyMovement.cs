@@ -34,7 +34,7 @@ public class OrangeEnemyMovement : MonoBehaviour
 
     private float GetOrangeSpeed(float speed, float maxSpeed, float acceleration)
     {
-        if(speed >= orangeMaxSpeed)
+        if(speed >= maxSpeed)
         {
             return speed;
         }
