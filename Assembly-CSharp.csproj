@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Enemy\Movement\BlueEnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movement\OrangeEnemyMovement.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Movement\YellowEnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Flyweights\BlockLight.cs" />
      <Compile Include="Assets\Scripts\Flyweights\BlockMin.cs" />
      <Compile Include="Assets\Scripts\Flyweights\BurstLight.cs" />

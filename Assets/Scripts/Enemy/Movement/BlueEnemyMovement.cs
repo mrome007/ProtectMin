@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BlueEnemyMovement : MonoBehaviour 
 {
+    public bool LeftDirection { get; set; }
+
     private float blueHopSpeed;
     private float blueMaxSpeed;
     private float blueAcceleration;
@@ -17,7 +19,7 @@ public class BlueEnemyMovement : MonoBehaviour
         blueHopSpeed = Random.Range(5f, 6f);
         blueMaxSpeed = 2f * blueHopSpeed;
         blueAcceleration = Random.Range(10f, 15f);
-        blueMovementDirection = new Vector3(1f, 1f, 0f);
+        blueMovementDirection = new Vector3(LeftDirection ? -1f : 1f, 1f, 0f);
 
     }
 
