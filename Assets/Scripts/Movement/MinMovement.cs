@@ -96,7 +96,7 @@ public class MinMovement : MonoBehaviour
 
     protected virtual void MoveMinInDeploy()
     {
-        transform.Translate(Vector3.left * 5f * Time.deltaTime);
+        transform.Translate(Vector3.left * 10f * Time.deltaTime);
         minLight.ChangeMinLightSpriteDirection(true);
         if(transform.position.x < -10f)
         {

@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c63f452defa3474a83831564d62c67f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinTypeToSpawn: 3
+  MinTypeToSpawn: 1
   MinsInBlock: 0
   NumberOfMinsToSpawn: 0
   blockSprite: {fileID: 212939035207251282}

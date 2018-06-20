@@ -66,7 +66,6 @@
      <Compile Include="Assets\Scripts\Flyweights\ProjectileLight.cs" />
      <Compile Include="Assets\Scripts\Flyweights\ProjectileMin.cs" />
      <Compile Include="Assets\Scripts\Miscellaneous\DummyBlockSpawner.cs" />
-     <Compile Include="Assets\Scripts\Miscellaneous\DummySpawner.cs" />
      <Compile Include="Assets\Scripts\Miscellaneous\ScrollingBackground.cs" />
      <Compile Include="Assets\Scripts\Movement\BlockMinMovement.cs" />
      <Compile Include="Assets\Scripts\Movement\BurstMinMovement.cs" />
@@ -83,6 +82,7 @@
      <Compile Include="Assets\Scripts\State\FloorDeployState.cs" />
      <Compile Include="Assets\Scripts\State\IDeployState.cs" />
      <Compile Include="Assets\Scripts\State\ProjectileDeployState.cs" />
+     <Compile Include="Assets\StartGame.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

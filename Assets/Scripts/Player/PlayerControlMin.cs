@@ -33,7 +33,6 @@ public class PlayerControlMin : MonoBehaviour
 
     private void Awake()
     {
-        currentMinType = MinsType.Block;
         playerAppearance.ChangeMinAppearance(currentMinType);
         var minTypes = Enum.GetValues(typeof(MinsType)).Cast<MinsType>().ToArray();
         numTypes = minTypes.Length - 1;
