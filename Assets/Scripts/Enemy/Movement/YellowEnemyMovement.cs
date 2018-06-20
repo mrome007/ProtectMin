@@ -2,33 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class YellowEnemyMovement : MonoBehaviour 
+public class YellowEnemyMovement : EnemyMovement
 {
-    public bool LeftDirection { get; set; }
-
     private Vector3? randomTarget;
-    private float yellowSpeed;
-    private float yellowMaxSpeed;
-    private float yellowAcceleration;
-    private Vector3 movementDirection;
     private Vector3 stopPosition;
 
     private float shakeTimer = 0f;
     private float shakeTime = 1f;
     private bool up;
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
         randomTarget = null;
-        yellowSpeed = Random.Range(5f, 6f);
-        yellowMaxSpeed = 20f * yellowSpeed;
-        yellowAcceleration = Random.Range(10f, 11f);
+        speed = Random.Range(5f, 6f);
+        maxSpeed = 20f * speed;
+        acceleration = Random.Range(10f, 11f);
         movementDirection = Vector3.zero;
         stopPosition = transform.position;
         up = true;
     }
 
-    private void Update()
+    protected override void Update()
     {
         if(randomTarget == null)
         {
@@ -47,9 +41,9 @@ public class YellowEnemyMovement : MonoBehaviour
         }
         else
         {
-            yellowSpeed = GetSpeed(yellowSpeed, yellowMaxSpeed, yellowAcceleration);
+            speed = GetSpeed(speed, maxSpeed, acceleration);
             var direction = randomTarget.Value - transform.position;
-            transform.Translate(direction.normalized * yellowSpeed * Time.deltaTime);
+            transform.Translate(direction.normalized * speed * Time.deltaTime);
 
             var sqrDistance = direction.sqrMagnitude;
             if(sqrDistance <= 1f)
@@ -59,17 +53,5 @@ public class YellowEnemyMovement : MonoBehaviour
                 stopPosition = transform.position;
             }
         }
-    }
-
-    private float GetSpeed(float speed, float maxSpeed, float acceleration)
-    {
-        if(speed >= maxSpeed)
-        {
-            return speed;
-        }
-
-        speed = speed + acceleration * Time.deltaTime;
-
-        return speed;
     }
 }

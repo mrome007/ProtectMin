@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1894259971350268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -8.19, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4806298158853990}
@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595830e3eaa1744dba7f48c3eb9a19c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orangeEnemyObject: {fileID: 4806298158853990}
 --- !u!212 &212065045953947910
 SpriteRenderer:
   m_ObjectHideFlags: 1
